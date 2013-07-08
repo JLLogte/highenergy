@@ -1,23 +1,39 @@
 //Basic
-$bodyBackground: #49d7e5;
-$textColor: #004008;
+$bodyBackground: #31624f;
+$textColor: #ffffff;
 
 //Navbar
-$navbarBackground: #4bf060;
-$navbarBackgroundHighlight: #88f094;
-$navbarLinkColor: #004008;
+$navbarBackground: #002039;
+$navbarBackgroundHighlight: #314b5f;
+$navbarLinkColor: #ffffff;
+$navbarLinkBackgroundHover: #ff8750;
+$navbarLinkBackgroundHoverActive: #4d1800;
+
+//Components
+$btnPrimaryBackground: #ff8750;
+$btnPrimaryBackgroundHighlight: #ff4f00;
+
 
 @import "bootstrap";
 
 body 
 { 
-	padding: 15px;
+	padding: 0px;
 }
 
-#logo h1
+
+
+.well
 {
-	text-shadow: 0 0 5px #88f094;
-	padding-left:5px;
+	background-color: #366B3C;
+	border:           0px;
+	box-shadow: 0px 0px 5px #004008;
+}
+
+.nav :hover
+{
+	border-radius: 6px;
+	box-shadow: 0px 0px 5px #ffb390;
 }
 
 
