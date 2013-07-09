@@ -1,2 +1,12 @@
 
 <h3>That'll Learn Em</h3>
+
+<% content_for :side_bar do %>
+	<% if user_signed_in? %>
+		<strong> User Information </strong>
+		<hr>
+		<%= current_user.email %>
+	<% else %>
+		<strong> Sign In to enchance your experince </strong>
+	<% end %>
+<% end %>
