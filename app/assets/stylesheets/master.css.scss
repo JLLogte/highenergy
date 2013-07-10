@@ -1,16 +1,16 @@
 //Basic
 $bodyBackground: #31624f;
-$textColor: #ffffff;
+$textColor:      #ffffff;
 
 //Navbar
-$navbarBackground: #002039;
-$navbarBackgroundHighlight: #314b5f;
-$navbarLinkColor: #ffffff;
-$navbarLinkBackgroundHover: #ff8750;
+$navbarBackground:                #002039;
+$navbarBackgroundHighlight:       #314b5f;
+$navbarLinkColor:                 #ffffff;
+$navbarLinkBackgroundHover:       #ff8750;
 $navbarLinkBackgroundHoverActive: #4d1800;
 
 //Components
-$btnPrimaryBackground: #ff8750;
+$btnPrimaryBackground:          #ff8750;
 $btnPrimaryBackgroundHighlight: #ff4f00;
 
 
@@ -27,13 +27,27 @@ body
 {
 	background-color: #366B3C;
 	border:           0px;
-	box-shadow: 0px 0px 5px #004008;
+	box-shadow:       0px 0px 5px #004008;
 }
 
+/*
 .nav :hover
 {
-	border-radius: 6px;
+	border-radius: 4px;
 	box-shadow: 0px 0px 5px #ffb390;
+}
+*/
+
+.list-controls
+{
+	display: inline-block;
+	float:   right;
+
+	a 
+	{
+		margin-left: 10px;
+		box-shadow:  2px 1px 3px darken($bodyBackground,15%);
+	}
 }
 
 

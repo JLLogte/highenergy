@@ -1,3 +1,3 @@
 class Game < ActiveRecord::Base
-	:name
+	validates :name, presence: true
 end

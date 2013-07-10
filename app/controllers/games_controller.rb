@@ -24,6 +24,7 @@ class GamesController < ApplicationController
   # POST /games
   # POST /games.json
   def create
+    params.permit!
     @game = Game.new(game_params)
 
     respond_to do |format|
@@ -41,6 +42,7 @@ class GamesController < ApplicationController
   # PATCH/PUT /games/1.json
   def update
     respond_to do |format|
+      params.permit!
       if @game.update(game_params)
         format.html { redirect_to @game, notice: 'Game was successfully updated.' }
         format.json { head :no_content }

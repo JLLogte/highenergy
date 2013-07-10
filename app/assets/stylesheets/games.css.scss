@@ -1,3 +1,14 @@
 // Place all the styles related to the Games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#games-listing
+{
+	padding-bottom: 20px;
+}
+
+.entry
+{
+	border-bottom-style: solid;
+	border-width:        1px;
+	padding-bottom:      15px;
+}
