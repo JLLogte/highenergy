@@ -15,4 +15,8 @@
   <br>
 <% end %>
 
-<%= link_to 'New Game', new_game_path %>
+<% if current_user.role == Role.admin %>
+   <%= link_to 'New Game', new_game_path, :class => "btn btn-primary pull-right" %>
+  <% else %>
+    <strong> lol u not admin</strong>
+<% end %>
