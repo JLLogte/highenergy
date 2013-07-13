@@ -1,5 +1,6 @@
 class Role < ActiveRecord::Base
-	has_and_belongs_to_many :user
+	has_many :user_roles
+	has_many :users, through: :user_roles
 
 	def self.admin
 		Role.where(name: "admin").first

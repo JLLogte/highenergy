@@ -5,18 +5,23 @@
 <% @games.each do |game| %>
   <div class="entry">
     <strong><%= game.name %></strong>
-    <div class="list-controls">
+    <div class="btn btn-primary pull-right"><a href="#" class="icon-plus"></a></div>
+    <% if current_user.is_admin? %>
+      <div class="list-controls">
+          <%= link_to 'Destroy', game, method: :delete, :class => "btn btn-danger pull-right" %>
+          <%= link_to 'Edit',    edit_game_path(game),  :class => "btn btn-primary pull-right" %>
+          <%= link_to 'Show',    game, :class                  => "btn btn-primary pull-right" %>
+      </div>
+    <% end %>
 
-        <%= link_to 'Destroy', game, method: :delete, :class => "btn btn-danger pull-right" %>
-        <%= link_to 'Edit', edit_game_path(game), :class => "btn btn-primary pull-right" %>
-        <%= link_to 'Show', game, :class => "btn btn-primary pull-right" %>
-    </div>
   </div>
   <br>
 <% end %>
 
-<% if current_user.role == Role.admin %>
+<% if current_user.is_admin? %>
    <%= link_to 'New Game', new_game_path, :class => "btn btn-primary pull-right" %>
-  <% else %>
-    <strong> lol u not admin</strong>
+<% end %>
+
+<% content_for :side_bar do %>
+
 <% end %>
