@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :edit, :update, :destroy]
+  before_action :set_game, only: [:show, :edit, :update, :destroy, :subscribe_to, :unsubscribe_to]
 
   # GET /games
   # GET /games.json
@@ -29,7 +29,7 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
+        format.html { redirect_to @games, notice: 'Game was successfully created.' }
         format.json { render action: 'show', status: :created, location: @game }
       else
         format.html { render action: 'new' }
@@ -63,9 +63,31 @@ class GamesController < ApplicationController
     end
   end
 
-  # POST /games/1
-  # POST /games/1.json
+  # POST /games/1/subscribe_to
+  # POST /games/1/subscribe_to.json
   def subscribe_to
+    if user_signed_in? and @game
+      Subscription.create(user_id: current_user.id, game_id: @game.id)
+    end
+
+    respond_to do |format|
+      format.html { redirect_to games_path, notice: 'Game was successfully subscribed to.'}
+      format.json { head :no_content }
+    end
+  end
+
+  # DELETE /games/1/unsubscribe_to
+  # DELETE /games/1/unsubscribe_to.json
+  def unsubscribe_to
+    if user_signed_in? and @game
+      game_to_destroy = Subscription.find_by(game_id: @game.id, user_id: current_user.id)
+      game_to_destroy.destroy
+    end
+
+    respond_to do |format|
+      format.html { redirect_to games_path, notice: 'Game was successfully unsubscribed to.'}
+      format.json { head :no_content }
+    end
   end
 
   private

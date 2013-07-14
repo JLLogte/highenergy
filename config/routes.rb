@@ -1,5 +1,13 @@
 HE::Application.routes.draw do
-  resources :games
+  resources :articles
+
+  resources :games do
+    member do
+      #/resource/:id/subscribe_to
+      post 'subscribe_to'
+      delete 'unsubscribe_to'
+    end
+  end
 
   devise_for :users
   resources :users

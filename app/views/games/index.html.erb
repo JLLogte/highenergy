@@ -5,12 +5,24 @@
 <% @games.each do |game| %>
   <div class="entry">
     <strong><%= game.name %></strong>
-    <div class="btn btn-primary pull-right"><a href="#" class="icon-plus"></a></div>
-    <% if current_user.is_admin? %>
+    <% if user_signed_in? and current_user.is_subscribed?(game) %>
+      <div class="btn btn-danger pull-right">
+        <%= link_to unsubscribe_to_game_path(game), method: :delete do %>
+          <i class='icon-minus icon-white'></i>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="btn btn-primary pull-right">
+        <%= link_to subscribe_to_game_path(game), method: :post do %>
+          <i class='icon-plus icon-white'></i>
+        <% end %>
+      </div>
+    <% end %>
+    <% if can? :manage, game %>
       <div class="list-controls">
           <%= link_to 'Destroy', game, method: :delete, :class => "btn btn-danger pull-right" %>
           <%= link_to 'Edit',    edit_game_path(game),  :class => "btn btn-primary pull-right" %>
-          <%= link_to 'Show',    game, :class                  => "btn btn-primary pull-right" %>
+          <%= link_to 'Show',    game,                  :class => "btn btn-primary pull-right" %>
       </div>
     <% end %>
 
@@ -18,7 +30,7 @@
   <br>
 <% end %>
 
-<% if current_user.is_admin? %>
+<% if can? :create, Game %>
    <%= link_to 'New Game', new_game_path, :class => "btn btn-primary pull-right" %>
 <% end %>
 

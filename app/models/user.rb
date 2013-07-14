@@ -12,12 +12,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def is_admin?
-
   	return false if not (self.role || Role.admin)
 
   	return self.role == Role.admin
-
-
   end
 
+  def is_subscribed?(game)
+    return self.games.include?(game)
+  end
 end

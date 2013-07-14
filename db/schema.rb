@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130713013552) do
+ActiveRecord::Schema.define(version: 20130713195922) do
+
+  create_table "articles", force: true do |t|
+    t.string   "name"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "games", force: true do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,8 +33,8 @@ ActiveRecord::Schema.define(version: 20130713013552) do
   end
 
   create_table "subscriptions", force: true do |t|
-    t.integer  "game"
-    t.integer  "user"
+    t.integer  "game_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
