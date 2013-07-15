@@ -1,17 +1,19 @@
 //Basic
-$bodyBackground: #31624f;
+$bodyBackground: #131213;
 $textColor:      #ffffff;
 
 //Navbar
-$navbarBackground:                #002039;
-$navbarBackgroundHighlight:       #314b5f;
+$navbarBackground:                #2a0955;
+$navbarBackgroundHighlight:       #442d64;
 $navbarLinkColor:                 #ffffff;
 $navbarLinkBackgroundHover:       #ff8750;
 $navbarLinkBackgroundHoverActive: #4d1800;
 
 //Components
-$btnPrimaryBackground:          #ff8750;
-$btnPrimaryBackgroundHighlight: #ff4f00;
+$btnPrimaryBackground:          #2a8e31;
+$btnPrimaryBackgroundHighlight: #007608;
+$btnDangerBackground:			#b44736;
+$btnDangerBackgroundHighlight:	#961500;
 
 
 @import "bootstrap";
@@ -21,22 +23,12 @@ body
 	padding: 0px;
 }
 
-
-
 .well
 {
-	background-color: #366B3C;
+	background-color: #353536;
 	border:           0px;
-	box-shadow:       0px 0px 5px #004008;
+	box-shadow:       0px 0px 5px #8f5fce;
 }
-
-/*
-.nav :hover
-{
-	border-radius: 4px;
-	box-shadow: 0px 0px 5px #ffb390;
-}
-*/
 
 .list-controls
 {
@@ -46,10 +38,7 @@ body
 	a 
 	{
 		margin-left: 10px;
+		margin-right: 10px;
 	}
 }
-
-
-
-
 @import "bootstrap-responsive";
