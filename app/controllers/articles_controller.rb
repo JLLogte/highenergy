@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_game, except: [:index]
 
   # GET /articles
   # GET /articles.json
@@ -25,10 +26,13 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
+    @article.game_id = @game.id
+
+
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.html { redirect_to game_article_path(@game, @article), notice: 'Article was successfully created.' }
         format.json { render action: 'show', status: :created, location: @article }
       else
         format.html { render action: 'new' }
@@ -66,6 +70,11 @@ class ArticlesController < ApplicationController
     def set_article
       @article = Article.find(params[:id])
     end
+
+    def set_game
+      @game = Game.find(params[:game_id])
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params

@@ -21,6 +21,7 @@ g = Game.create(name: "dota2")
 
 g = Game.create(name: "CS:GO")
 
+
 a = Article.create({ :name => 'Good', 
 					 :content => 'Great Content'})
 

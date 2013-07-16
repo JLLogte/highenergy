@@ -1,7 +1,8 @@
 HE::Application.routes.draw do
-  resources :articles
+  ##resources :articles
 
   resources :games do
+    resources :articles
     member do
       #/resource/:id/subscribe_to
       post 'subscribe_to'

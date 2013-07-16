@@ -3,21 +3,21 @@
   <h1>News Feed</h1>
 </div>
 
-<% @articles.each do |article| %>
-  <div class="entry">
-    <div class="entry-name">
-      <%= article.name %>
+<% current_user.games.each do |game|%>
+  <% game.articles.each do |article| %>
+    <div class="entry">
+      <div class="entry-name">
+        <%= article.name %>
+      </div>
+      <div class="entry-content">
+        <%= article.content %>
+      </div>
+      <div class="entry-controls">
+        <% if can? :manage, article %>
+        <% end %>
+      </div>
     </div>
-    <div class="entry-content">
-      <%= article.content %>
-    </div>
-    <div class="entry-controls">
-      <% if can? :manage, article %>
-        <%= link_to 'Destroy', article, method: :delete, :class => "btn btn-danger" %>
-        <%= link_to 'Edit',    edit_article_path(article),  :class => "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
+  <% end %>
 <% end %>
 <br>
 
