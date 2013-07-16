@@ -15,6 +15,8 @@ $btnPrimaryBackgroundHighlight: #007608;
 $btnDangerBackground:			#b44736;
 $btnDangerBackgroundHighlight:	#961500;
 
+$headingColor: lighten($navbarBackground,15%);
+$wellColor: lighten($bodyBackground, 15%);
 
 @import "bootstrap";
 
@@ -25,20 +27,46 @@ body
 
 .well
 {
-	background-color: #353536;
+	background-color: $wellColor;
 	border:           0px;
-	box-shadow:       0px 0px 5px #8f5fce;
+	padding:          0px;
+
 }
 
-.list-controls
+.entry-controls
 {
 	display: inline-block;
-	float:   right;
+	width: 100%;
+}
 
-	a 
-	{
-		margin-left: 10px;
-		margin-right: 10px;
-	}
+.heading
+{
+	text-align: center;
+	border-radius: 4px;
+
+}
+
+.gradient-heading
+{
+   background-color: #1a82f7; 
+   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($navbarBackgroundHighlight), to($navbarBackground));
+   background-image: -webkit-linear-gradient(top, $navbarBackgroundHighlight, $navbarBackground); 
+   background-image: -moz-linear-gradient(top, $navbarBackgroundHighlight, $navbarBackground);
+   background-image: -ms-linear-gradient(top, $navbarBackgroundHighlight, $navbarBackground);
+   background-image: -o-linear-gradient(top, $navbarBackgroundHighlight, $navbarBackground);
+}
+
+.entry-name,.entry-content,.entry-controls
+{
+	padding-left: 5px;
+	border-top-width: 1px;
+	border-top-style: solid;
+}
+
+.side-content
+{
+	padding: 10px;
+	border-top-width: 1px;
+	border-top-style: solid;
 }
 @import "bootstrap-responsive";
