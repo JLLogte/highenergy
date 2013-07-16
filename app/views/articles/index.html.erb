@@ -1,29 +1,34 @@
-<h1>Listing articles</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Content</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="heading gradient-heading">
+  <h1>News Feed</h1>
+</div>
 
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.name %></td>
-        <td><%= article.content %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<% @articles.each do |article| %>
+  <div class="entry">
+    <div class="entry-name">
+      <%= article.name %>
+    </div>
+    <div class="entry-content">
+      <%= article.content %>
+    </div>
+    <div class="entry-controls">
+      <% if can? :manage, article %>
+        <%= link_to 'Destroy', article, method: :delete, :class => "btn btn-danger" %>
+        <%= link_to 'Edit',    edit_article_path(article),  :class => "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
 <br>
 
-<%= link_to 'New Article', new_article_path %>
+
+
+<% content_for :side_bar do %>
+  <div class="heading gradient-heading">
+    <% if user_signed_in? %>
+      <h3>Your Articles</h3>
+    <% end %>
+  </div>
+  <div class="side-content">
+  </div>
+<% end %>

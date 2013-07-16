@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   has_many :subscriptions
   has_many :games, through: :subscriptions
+
+  has_many :articles, through: :games
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
