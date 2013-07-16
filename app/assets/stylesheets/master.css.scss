@@ -10,13 +10,14 @@ $navbarLinkBackgroundHover:       #ff8750;
 $navbarLinkBackgroundHoverActive: #4d1800;
 
 //Components
-$btnPrimaryBackground:          #2a8e31;
-$btnPrimaryBackgroundHighlight: #007608;
+$btnPrimaryBackground:          #469717;
+$btnPrimaryBackgroundHighlight: #338105;
 $btnDangerBackground:			#b44736;
 $btnDangerBackgroundHighlight:	#961500;
 
 $headingColor: lighten($navbarBackground,15%);
 $wellColor: lighten($bodyBackground, 15%);
+$borderColor: lighten($bodyBackground, 5%);
 
 @import "bootstrap";
 
@@ -41,7 +42,13 @@ body
 .heading
 {
 	text-align: center;
-	border-radius: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+
+	h1,h2,h3,h4
+	{
+		margin: 0px;
+	}
 
 }
 
@@ -60,6 +67,7 @@ body
 	padding-left: 5px;
 	border-top-width: 1px;
 	border-top-style: solid;
+	border-top-color: $borderColor;
 }
 
 .side-content
@@ -67,5 +75,20 @@ body
 	padding: 10px;
 	border-top-width: 1px;
 	border-top-style: solid;
+	border-top-color: $borderColor;
+}
+
+.entry
+{
+	padding-bottom:      15px;
+}
+
+.entry-content
+{
+	padding-top:20px;
+	min-height: 200px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: $borderColor;
 }
 @import "bootstrap-responsive";

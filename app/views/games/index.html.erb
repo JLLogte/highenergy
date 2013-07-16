@@ -38,13 +38,13 @@
 
 <% content_for :side_bar do %>
   <div class="heading gradient-heading">
-    <% if user_signed_in? %>
-      <h3>Your Games</h3>
-    <% end %>
+    <h3>Your Games</h3>
   </div>
   <div class="side-content">
+  <% if user_signed_in? %>
     <% current_user.games.each do |game| %>
       <%= game.name %><br>
     <% end %>
   </div>
+  <% end %>
 <% end %>
