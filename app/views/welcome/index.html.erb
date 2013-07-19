@@ -1,15 +1,23 @@
 
-<h3>That'll Learn Em</h3>
+<div class="heading gradient-heading">
+  <h1>New's Feed</h1>
+</div>
 
-<% @articles.each do |article| %>
-  <%= article.name %><hr>
-  <%= article.content %><br>
+<% if user_signed_in? %>
+  <% @articles.each do |article| %>
+    <%= article.name %><hr>
+    <%= article.game.name %><br>
+    <%= article.content %><br>
+  <% end %>
+<% else %>
+    <strong> Sign in and subscribe to games to see a list of articles </strong>
 <% end %>
 
 <% content_for :side_bar do %>
 	<% if user_signed_in? %>
-		<strong> User Information </strong>
-		<hr>
+    <div class="heading gradient-heading">
+		  <h4> User Information </h4>
+    </div>
 		<%= current_user.email %>
 	<% else %>
 		<strong> Sign In to enhance your experince </strong>

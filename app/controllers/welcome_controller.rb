@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
   def index
   	if user_signed_in?
       @articles = Array.new
-  	 Game.all.each do |game|
+  	 Game.last(10).each do |game|
   	   @articles << game.articles if current_user.is_subscribed?(game)
       end
       @articles.flatten!
