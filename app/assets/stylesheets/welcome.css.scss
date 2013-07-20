@@ -2,3 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+#profile-button
+{
+	padding-top: 10px;
+	display: inline-block;
+	float: right;
+	min-height: 30px;
+	a
+	{
+		padding-left: 10px;
+		color: white;
+	}
+}

@@ -92,4 +92,18 @@ body
 	border-bottom-style: solid;
 	border-bottom-color: $borderColor;
 }
+
+.vert
+{
+	border-left: 1px solid;
+	border-color: $borderColor;
+	min-height:	 40px;
+
+}
+
+.navbar-inner
+{
+	padding-left: 0px;
+	padding-right: 0px;
+}
 @import "bootstrap-responsive";
