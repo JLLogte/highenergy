@@ -45,6 +45,13 @@
                   <i class='icon-user icon-white'></i> <%= current_user.email %>
                 <% end %>
               <% else %>
+                <div id="login-form">
+                  <form class="inline-form">
+                    <input type="text" class="input-small" placeholder="Login">
+                    <input type="password" class="input-small" placeholder="Password">
+                  </form>
+                </div>
+                <%= link_to 'Login', new_user_session_path, :class => 'btn btn-primary'%>
               <% end %> 
           </div>
           <div class="vert pull-right">
@@ -78,16 +85,24 @@
       <div class="row-fluid">
 
       	<div class="span9 well">
+
           <%= yield %>
+
         </div>
 
         <div class="span3 well">
+
           <%= yield :side_bar %>
-          <%if user_signed_in? %>
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'btn btn-primary'%>
-          <% else %>
-            <%= link_to 'Login', new_user_session_path, :class => 'btn btn-primary'%>
-          <% end %>
+
+          <div class="footer gradient-footer">
+            <%if user_signed_in? %>
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'btn btn-primary'%>
+            <% else %>
+
+
+              
+            <% end %>
+          </div>
         </div><!--/span-->
       </div><!--/row-->
     </div> <!-- /container -->
