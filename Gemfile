@@ -33,7 +33,7 @@ gem 'devise', '~>3.0.0.rc'
 #
 gem 'cancan'
 gem 'rspec-rails'
-gem 'paperclip'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 
 group :doc do

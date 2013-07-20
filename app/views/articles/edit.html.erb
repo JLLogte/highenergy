@@ -1,6 +1,8 @@
 <h1>Editing article</h1>
 
 <%= render 'form' %>
-
+<%= form_for @user, :url => users_path, :html => { :multipart => true } do |form| %>
+  <%= form.file_field :image %>
+<% end %>
 <%= link_to 'Show', @article %> |
 <%= link_to 'Back', articles_path %>
