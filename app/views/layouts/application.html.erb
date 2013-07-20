@@ -40,10 +40,16 @@
         <div class="container-fluid">
           <div class="nav pull-right">
               <% if user_signed_in? %>
-                  <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'btn btn-primary' %>
+                <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'btn btn-primary'%>
+                <%= link_to current_user do %>
+                 <div class="btn btn-primary">
+                  <i class='icon-user icon-white'></i> <%= current_user.email %>
+                 </div>
+                <% end %>
               <% else %>
                 <%= link_to 'Login', new_user_session_path, :class => 'btn btn-primary' %>
-              <% end %>
+              <% end %> 
+
           </div>
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
             <span class="icon-bar"></span>

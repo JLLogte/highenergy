@@ -1,0 +1,12 @@
+<div class="heading gradient-heading">
+  <h2>User Information</h2>
+</div>
+<% if user_signed_in? %>
+	Email: <%= @user.email %>
+	<br>
+	Times signed in: <%= @user.sign_in_count %>
+	<br>
+	Last sign in at: <%= @user.last_sign_in_at %>
+<% else %>
+Not Logged In
+<% end %>
