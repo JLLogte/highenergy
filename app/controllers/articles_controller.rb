@@ -28,8 +28,6 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.game_id = @game.id
 
-
-
     respond_to do |format|
       if @article.save
         format.html { redirect_to game_article_path(@game, @article), notice: 'Article was successfully created.' }

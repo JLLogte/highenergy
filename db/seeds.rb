@@ -21,13 +21,3 @@ g = Game.create(name: "dota2")
 
 g = Game.create(name: "CS:GO")
 
-
-a = Article.create({ :name => 'Good', 
-					 :content => 'Great Content'})
-
-a = Article.create({ :name => 'Bad', 
-					 :content => 'Bleh'})
-
-a = Article.create({ :name => 'Ugly', 
-					 :content => 'Yeah it is'})
-

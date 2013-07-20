@@ -33,6 +33,7 @@ gem 'devise', '~>3.0.0.rc'
 #
 gem 'cancan'
 gem 'rspec-rails'
+gem 'paperclip'
 
 
 group :doc do

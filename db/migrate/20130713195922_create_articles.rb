@@ -5,6 +5,7 @@ class CreateArticles < ActiveRecord::Migration
       t.string :content
       t.belongs_to :game
 
+
       t.timestamps
     end
   end
