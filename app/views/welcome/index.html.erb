@@ -2,16 +2,8 @@
 <div class="heading gradient-heading">
   <h1>News Feed</h1>
 </div>
-
-<% if user_signed_in? %>
-  <% @articles.each do |article| %> <!-- Move this "Article display" to a partial? -->
-    <%= article.name %><hr>
-    <%= article.game.name %><br>
-    <%= article.content %><br>
-  <% end %>
-<% else %>
-  <%= render partial: "shared/article", collection: @articles %>
-<% end %>
+  
+<%= render partial: "shared/article", collection: @articles %>
 
 <% content_for :side_bar do %>
   <div class="heading gradient-heading">

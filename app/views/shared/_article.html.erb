@@ -1,10 +1,20 @@
-<div class="entry">
-  <div class="entry-name">
-    <%= article.name %>
+<div class="entry row-fluid">
+
+  <div class="entry-name row-fluid">
+    <div class="span3 title-bar">
+      <%= article.game.name %>
+    </div>
+    <div class="span8 title-bar">
+      <%= article.name %>
+    </div>
+    <div class="span1 title-bar">
+      Source Icon
+    </div>
   </div>
   <div class="entry-content">
     <%= article.content %>
   </div>
   <div class="entry-controls">
+    <%= link_to 'Edit', edit_game_article_path(article.game,article) %>
   </div>
 </div>
