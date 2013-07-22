@@ -7,7 +7,9 @@ class WelcomeController < ApplicationController
   	   @articles << game.articles if current_user.is_subscribed?(game)
       end
       @articles.flatten!
-  	end
+  	else
+      @articles = Article.all
+    end
   end
 
 end

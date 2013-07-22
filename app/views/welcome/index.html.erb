@@ -4,20 +4,20 @@
 </div>
 
 <% if user_signed_in? %>
-  <% @articles.each do |article| %>
+  <% @articles.each do |article| %> <!-- Move this "Article display" to a partial? -->
     <%= article.name %><hr>
     <%= article.game.name %><br>
     <%= article.content %><br>
   <% end %>
 <% else %>
-    <strong> Sign in and subscribe to games to see a list of articles </strong>
+  <%= render partial: "shared/article", collection: @articles %>
 <% end %>
 
 <% content_for :side_bar do %>
-	<% if user_signed_in? %>
-    <div class="heading gradient-heading">
-		  <h4> User Information </h4>
-    </div>
+  <div class="heading gradient-heading">
+    <h4> User Information </h4>
+  </div>
+  <% if user_signed_in? %>
 		<%= current_user.email %><br>
 	<% else %>
 		<strong> Sign In to enhance your experince </strong>

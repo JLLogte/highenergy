@@ -12,12 +12,12 @@ $navbarLinkBackgroundHoverActive: #4d1800;
 //Components
 $btnPrimaryBackground:          #469717;
 $btnPrimaryBackgroundHighlight: #338105;
-$btnDangerBackground:			#b44736;
-$btnDangerBackgroundHighlight:	#961500;
+$btnDangerBackground:           #b44736;
+$btnDangerBackgroundHighlight:  #961500;
 
 $headingColor: lighten($navbarBackground,15%);
-$wellColor: lighten($bodyBackground, 15%);
-$borderColor: lighten($bodyBackground, 5%);
+$wellColor:    lighten($bodyBackground, 15%);
+$borderColor:  lighten($bodyBackground, 5%);
 
 @import "bootstrap";
 
@@ -31,7 +31,6 @@ body
 	background-color: $wellColor;
 	border:           0px;
 	padding:          0px;
-
 }
 
 .entry-controls
@@ -57,7 +56,7 @@ body
 {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  min-height: 40px;
+  min-height: 20px;
 
   h1,h2,h3,h4
   {
@@ -68,6 +67,7 @@ body
   {
     margin-top: 6px;
     margin-left: 6px;
+    margin-bottom: 6px;
   }
 }
 
@@ -139,8 +139,6 @@ body
 #login-form
 {
   display: inline-block;
-
-
 }
 
 
