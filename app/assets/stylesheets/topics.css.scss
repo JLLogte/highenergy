@@ -1,0 +1,10 @@
+// Place all the styles related to the Topics controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$bodyBackground: #131213;
+$borderColor: lighten($bodyBackground, 5%);
+
+#topics-listing
+{
+  padding-bottom: 20px;
+}
