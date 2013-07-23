@@ -46,14 +46,23 @@
                 <% end %>
               <% else %>
                 <div id="login-form">
-                  <form class="inline-form">
-                    <input type="text" class="input-small" placeholder="Login">
-                    <input type="password" class="input-small" placeholder="Password">
-                  </form>
+                 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+                   <div>
+                    <%= f.email_field :email, :placeholder => "Email", :autofocus => true %>
+                    <%= f.password_field :password, :placeholder => "Password" %>
+                    <%= f.submit "Sign in" , :class => 'btn btn-primary'%>
+                   </div>
+
+                 <% if devise_mapping.rememberable? -%>
+                  <div align="right">
+                    <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+                    <%= render "devise/shared/links" %>
+                  </div>
+                 <% end -%>
+                <% end %>
                 </div>
-                <%= link_to 'Login', new_user_session_path, :class => 'btn btn-primary'%>
-              <% end %> 
-          </div>
+             <% end %> 
+            </div>
           <div class="vert pull-right">
           </div>
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
