@@ -3,7 +3,7 @@
   # Initialize the defaults.
   plugin_name = 'he_electrify'
   document    = window.document
-  debug       = false
+  debug       = true
   defaults    = 
     selector:          '.is-electrified'
     append_to:         'body'
