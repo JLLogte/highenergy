@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET topics/#/articles
   # GET topics/#/articles.json
   def index
-    @articles = @topic.articles
+    @articles = @topic.articles.order("created_at DESC")
   end
 
   # GET topics/#/articles/#
