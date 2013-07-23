@@ -92,11 +92,12 @@ body
    background-image: -o-linear-gradient(top, $navbarBackgroundHighlight, $navbarBackground);
 }
 
-.entry-name,.entry-content
+.entry-name
 {
 	border-top-width: 1px;
 	border-top-style: solid;
 	border-top-color: $borderColor;
+
 }
 
 .side-content

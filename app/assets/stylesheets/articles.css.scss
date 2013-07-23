@@ -13,6 +13,14 @@
 {
 }
 
+#article-name
+{
+  h1,h2,h3
+  {
+    line-height: 10px;
+  }
+}
+
 #article-image, #article-content
 {
   padding-top: 5px;
@@ -26,6 +34,7 @@
 #article-content
 {
   margin-left: 0px;
+  padding-left: 10px;
 }
 
 .flair-right

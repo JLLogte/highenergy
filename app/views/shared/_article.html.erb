@@ -5,7 +5,7 @@
       <%= article.game.name %>
     </div>
     <div id="article-name" class="span8">
-      <%= article.name %>
+      <h3><%= article.name %></h3>
     </div>
     <div id="article-source-icon" class="span1 flair-right">
       Icon
@@ -13,7 +13,11 @@
   </div>
   <div class="entry-content row-fluid">
     <div id="article-image" class="span2 img-rounded">
-      <%= image_tag article.image.url %>
+      <% if article.image.url != "/images/original/missing.png" %>
+        <%= image_tag article.image.url %>
+      <% else %>
+        <%= image_tag article.game.image.url %>
+      <% end %>
     </div>
     <div id="article-content" class="span10">
       <%= article.content %>

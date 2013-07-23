@@ -2,6 +2,10 @@
 
 <h3><%= @game.name %></h3>
 
+<p>
+<%= image_tag @game.image.url %>
+</p>
+
 <% if can? :manage, @game %>
   <%= link_to 'New Article', new_game_article_path(@game), :class => "btn btn-primary" %>
   <%= link_to 'Edit', edit_game_path(@game), :class => "btn btn-primary" %> 

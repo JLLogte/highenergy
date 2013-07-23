@@ -3,6 +3,7 @@ class CreateArticles < ActiveRecord::Migration
     create_table :articles do |t|
       t.string :name
       t.string :content
+      t.string :source_url
       t.belongs_to :game
 
 
