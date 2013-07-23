@@ -17,7 +17,17 @@ ActiveRecord::Schema.define(version: 20130723030349) do
     t.string   "name"
     t.string   "content"
     t.string   "source_url"
-    t.integer  "topic_id"
+    t.integer  "game_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "games", force: true do |t|
+    t.string   "name",               null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -33,7 +43,7 @@ ActiveRecord::Schema.define(version: 20130723030349) do
   end
 
   create_table "subscriptions", force: true do |t|
-    t.integer  "topic_id"
+    t.integer  "game_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
