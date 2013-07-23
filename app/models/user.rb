@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
   has_one :role, through: :user_role
 
   has_many :subscriptions
-  has_many :games, through: :subscriptions
+  has_many :topics, through: :subscriptions
 
-  has_many :articles, through: :games
+  has_many :articles, through: :topics
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -19,7 +19,11 @@ class User < ActiveRecord::Base
   	return self.role == Role.admin
   end
 
-  def is_subscribed?(game)
-    return self.games.include?(game)
+  def is_subscribed?(topic)
+    return self.topics.include?(topic)
+  end
+
+  def get_articles
+    return self.articles.order("created_at DESC").limit(10)
   end
 end

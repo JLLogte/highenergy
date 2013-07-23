@@ -17,7 +17,7 @@ u = User.create({ :email => 'ruminatious@gmail.com',
 
 u.role = Role.admin
 
-g = Game.create(name: "dota2")
+t = Topic.create(name: "dota2")
 
-g = Game.create(name: "CS:GO")
+t = Topic.create(name: "CS:GO")
 

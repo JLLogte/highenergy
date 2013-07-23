@@ -7,7 +7,7 @@ gem 'rails', '4.0.0'
 gem 'sqlite3'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 4.0.0.rc2'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -34,6 +34,7 @@ gem 'devise', '~>3.0.0.rc'
 gem 'cancan'
 gem 'rspec-rails'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'font-awesome-rails'
 
 
 group :doc do

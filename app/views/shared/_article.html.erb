@@ -1,8 +1,8 @@
 <div class="entry row-fluid">
 
   <div class="entry-name row-fluid">
-    <div id="article-game" class="span2 flair-left">
-      <%= article.game.name %>
+    <div id="article-topic" class="span2 flair-left">
+      <%= article.topic.name %>
     </div>
     <div id="article-name" class="span8">
       <h3><%= article.name %></h3>
@@ -13,10 +13,10 @@
   </div>
   <div class="entry-content row-fluid">
     <div id="article-image" class="span2 img-rounded">
-      <% if article.image.url != "/images/original/missing.png" %>
-        <%= image_tag article.image.url %>
+      <% if article.get_image %>
+        <%= image_tag article.get_image %>
       <% else %>
-        <%= image_tag article.game.image.url %>
+        <%= image_tag article.topic.get_image %>
       <% end %>
     </div>
     <div id="article-content" class="span10">
@@ -24,6 +24,8 @@
     </div>
   </div>
   <div class="entry-controls">
-    <%= link_to 'Edit', edit_game_article_path(article.game,article) %>
+    <% if can? :manage, article %>
+      <%= link_to 'Edit', edit_topic_article_path(article.topic,article) %>
+    <% end %>
   </div>
 </div>

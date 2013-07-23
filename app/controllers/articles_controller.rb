@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_action :set_game
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :get_image]
+  before_action :set_topic
 
   # GET /articles
   # GET /articles.json
@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  # GET games/#/articles/#/edit
+  # GET topics/#/articles/#/edit
   def edit
   end
 
@@ -26,11 +26,11 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
-    @article.game_id = @game.id
+    @article.topic_id = @topic.id
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to game_article_path(@game, @article), notice: 'Article was successfully created.' }
+        format.html { redirect_to topic_article_path(@topic, @article), notice: 'Article was successfully created.' }
         format.json { render action: 'show', status: :created, location: @article }
       else
         format.html { render action: 'new' }
@@ -44,7 +44,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to game_article_path(@game,@article), notice: 'Article was successfully updated.' }
+        format.html { redirect_to topic_article_path(@topic,@article), notice: 'Article was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,8 +69,8 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
-    def set_game
-      @game = Game.find(params[:game_id])
+    def set_topic
+      @topic = Topic.find(params[:topic_id])
     end
 
 
