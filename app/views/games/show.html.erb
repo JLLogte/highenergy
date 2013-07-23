@@ -7,6 +7,20 @@
 </p>
 
 <% if can? :manage, @game %>
+  <br>
+  <% @game.articles.each do |article| %>
+    <div class="entry">
+      <div class="entry-image">
+      	<%=image_tag article.image.url %>
+      </div>
+      <div class="entry-name">
+        <%= article.name %>
+      </div>
+      <div class="entry-content">
+        <%= article.content %>
+      </div>
+    </div>
+  <% end %>
   <%= link_to 'New Article', new_game_article_path(@game), :class => "btn btn-primary" %>
   <%= link_to 'Edit', edit_game_path(@game), :class => "btn btn-primary" %> 
 <% end %>
