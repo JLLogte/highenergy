@@ -11,23 +11,28 @@
     <div class="entry-content">
     </div>
     <div class="entry-controls">
+
       <% if user_signed_in? and current_user.is_subscribed?(game) %>
         <%= link_to unsubscribe_to_game_path(game), method: :delete do %>
           <div class="btn btn-danger">
             <i class='icon-minus icon-white'></i>Remove
           </div>
         <% end %>
-      <% else %>
+      <% end %>
+
+      <% if user_signed_in? and not current_user.is_subscribed?(game) %>
         <%= link_to subscribe_to_game_path(game), method: :post do %>
           <div class="btn btn-primary">
             <i class='icon-plus icon-white'></i>Add
           </div>
         <% end %>
       <% end %>
+
       <% if can? :manage, game %>
         <%= link_to 'Destroy', game, method: :delete, :class => "btn btn-danger" %>
         <%= link_to 'Edit',    edit_game_path(game),  :class => "btn btn-primary" %>
       <% end %>
+
     </div>
   </div>
 <% end %>

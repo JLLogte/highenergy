@@ -1,10 +1,25 @@
-<div class="entry">
-  <div class="entry-name">
-    <%= article.name %>
+<div class="entry row-fluid">
+
+  <div class="entry-name row-fluid">
+    <div id="article-game" class="span2 flair-left">
+      <%= article.game.name %>
+    </div>
+    <div id="article-name" class="span8">
+      <%= article.name %>
+    </div>
+    <div id="article-source-icon" class="span1 flair-right">
+      Icon
+    </div>
   </div>
-  <div class="entry-content">
-    <%= article.content %>
+  <div class="entry-content row-fluid">
+    <div id="article-image" class="span2 img-rounded">
+      <%= image_tag article.image.url %>
+    </div>
+    <div id="article-content" class="span10">
+      <%= article.content %>
+    </div>
   </div>
   <div class="entry-controls">
+    <%= link_to 'Edit', edit_game_article_path(article.game,article) %>
   </div>
 </div>

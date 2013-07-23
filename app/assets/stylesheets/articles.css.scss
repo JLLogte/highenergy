@@ -1,3 +1,64 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#article-game, #article-name, #article-source-icon
+{
+  margin-left:0px;
+  padding-left: 5px;
+  text-align: center;
+}
+
+#article-game
+{
+}
+
+#article-image, #article-content
+{
+  padding-top: 5px;
+}
+
+#article-source-icon
+{
+  float: right;
+}
+
+#article-content
+{
+  margin-left: 0px;
+}
+
+.flair-right
+{
+  border-bottom-left-radius:  4px;
+  border-top-left-radius:     4px;
+  background-color: #33CCFF;
+  color: #000;
+  box-shadow: -1px 1px 2px #000;
+
+  background: #5ea2c4; /* Old browsers */
+  background: -moz-linear-gradient(left, #5ea2c4 0%, #258dc8 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#5ea2c4), color-stop(100%,#258dc8)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #5ea2c4 0%,#258dc8 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #5ea2c4 0%,#258dc8 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #5ea2c4 0%,#258dc8 100%); /* IE10+ */
+  background: linear-gradient(to right, #5ea2c4 0%,#258dc8 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ea2c4', endColorstr='#258dc8',GradientType=1 ); /* IE6-9 */
+}
+
+.flair-left
+{
+  border-bottom-right-radius:  4px;
+  border-top-right-radius:     4px;
+  color: #000;
+  box-shadow: 1px 1px 2px #000;
+
+  background: #70a000; /* Old browsers */
+  background: -moz-linear-gradient(left,  #70a000 0%, #84c100 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#70a000), color-stop(100%,#84c100)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #70a000 0%,#84c100 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  #70a000 0%,#84c100 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  #70a000 0%,#84c100 100%); /* IE10+ */
+  background: linear-gradient(to right,  #70a000 0%,#84c100 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70a000', endColorstr='#84c100',GradientType=1 ); /* IE6-9 */
+}
