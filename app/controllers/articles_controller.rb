@@ -2,18 +2,18 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy, :get_image]
   before_action :set_topic
 
-  # GET /articles
-  # GET /articles.json
+  # GET topics/#/articles
+  # GET topics/#/articles.json
   def index
-    @articles = Article.all
+    @articles = @topic.articles
   end
 
-  # GET /articles/1
-  # GET /articles/1.json
+  # GET topics/#/articles/#
+  # GET topics/#/articles/#.json
   def show
   end
 
-  # GET /articles/new
+  # GET topics/#/articles/new
   def new
     @article = Article.new
   end
@@ -22,8 +22,8 @@ class ArticlesController < ApplicationController
   def edit
   end
 
-  # POST /articles
-  # POST /articles.json
+  # POST topics/#/articles
+  # POST topics/#/articles.json
   def create
     @article = Article.new(article_params)
     @article.topic_id = @topic.id
@@ -39,8 +39,8 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /articles/1
-  # PATCH/PUT /articles/1.json
+  # PATCH/PUT topics/#/articles/#
+  # PATCH/PUT topics/#/articles/#.json
   def update
     respond_to do |format|
       if @article.update(article_params)
@@ -53,8 +53,8 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # DELETE /articles/1
-  # DELETE /articles/1.json
+  # DELETE topics/#/articles/#
+  # DELETE topics/#/articles/#.json
   def destroy
     @article.destroy
     respond_to do |format|
