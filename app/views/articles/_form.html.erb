@@ -19,9 +19,11 @@
     <%= f.label :content %><br>
     <%= f.text_field :content %>
   </div>
-  <div class="field">
-    <%= f.file_field :image %>
-  </div>
+  <% if not @article.get_image  %>
+    <div class="field">
+     <%= f.file_field :image %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

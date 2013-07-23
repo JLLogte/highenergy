@@ -13,10 +13,10 @@
   </div>
   <div class="entry-content row-fluid">
     <div id="article-image" class="span2 img-rounded">
-      <% if article.get_image %>
-        <%= image_tag article.get_image %>
+      <% if article.image.url != "/images/original/missing.png" %>
+        <%= image_tag article.image.url %>
       <% else %>
-        <%= image_tag article.topic.get_image %>
+        <%= image_tag article.topic.image.url %>
       <% end %>
     </div>
     <div id="article-content" class="span10">
@@ -24,8 +24,6 @@
     </div>
   </div>
   <div class="entry-controls">
-    <% if can? :manage, article %>
-      <%= link_to 'Edit', edit_topic_article_path(article.topic,article) %>
-    <% end %>
+    <%= link_to 'Edit', edit_topic_article_path(article.topic,article) %>
   </div>
 </div>
