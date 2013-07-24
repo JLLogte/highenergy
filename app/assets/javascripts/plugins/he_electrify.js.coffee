@@ -105,7 +105,7 @@
         top_offset = Math.floor(Math.random() * @options.top_offset_max * 2) - @options.top_offset_max # Gives [-offset_max, offset_max] as offset possibilities
         top_offset = -(top_offset) if add_negative_top == true # Invert if random negative check was true.
 
-        font_offset = Math.floor(Math.random() * @options.font_offset_max * 2) - @options.font_offset_max # Gives [-offset_max, offset_max] as offset possibilities
+        font_offset = Math.floor(Math.random() * @options.font_offset_max) # Gives [0, offset_max] as offset possibilities
 
         random_color = @options.particle_colors[Math.floor(Math.random() * @options.particle_colors.length)]
 
