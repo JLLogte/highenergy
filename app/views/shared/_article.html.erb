@@ -1,29 +1,31 @@
-<div class="entry row-fluid">
+<div class="entry row">
 
-  <div class="entry-name row-fluid">
-    <div id="article-topic" class="span2 flair-left">
+  <div class="entry-name row">
+    <div id="article-topic" class="flair-left">
       <%= article.topic.name %>
     </div>
-    <div id="article-name" class="span8">
+    <div id="article-name" class="">
       <h3><%= article.name %></h3>
     </div>
-    <div id="article-source-icon" class="span1 flair-right">
+    <div id="article-source-icon" class="flair-right">
       Icon
     </div>
   </div>
-  <div class="entry-content row-fluid">
-    <div id="article-image" class="span2 img-rounded">
+  <div class="entry-content row">
+    <div id="article-image" class="img-rounded">
       <% if article.image.url != "/images/original/missing.png" %>
         <%= image_tag article.image.url %>
       <% else %>
         <%= image_tag article.topic.image.url %>
       <% end %>
     </div>
-    <div id="article-content" class="span10">
+    <div id="article-content" class="">
       <%= article.content %>
     </div>
   </div>
   <div class="entry-controls">
-    <%= link_to 'Edit', edit_topic_article_path(article.topic,article) %>
+    <% if can? :manage, article %>
+      <%= link_to 'Edit', edit_topic_article_path(article.topic,article) %>
+    <% end %>
   </div>
 </div>

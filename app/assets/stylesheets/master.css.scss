@@ -3,163 +3,19 @@
 $bodyBackground: #094165;
 $textColor:      #ffffff;
 
-//Navbar
-$navbarBackground:                #1a6799;
-$navbarBackgroundHighlight:       #4d9acc;
-$navbarLinkColor:                 #ffffff;
-$navbarLinkColorHover:            #ffffff;
-$navbarLinkBackgroundHover:       #094165;
-$navbarLinkBackgroundHoverActive: #4d1800;
-
-//Components
-$btnPrimaryBackground:          #469717;
-$btnPrimaryBackgroundHighlight: #338105;
-$btnDangerBackground:           #b44736;
-$btnDangerBackgroundHighlight:  #961500;
-
-$wellColor:                     #1a6799;
-$borderColor: lighten($bodyBackground, 5%);
-
 @import "font-awesome";
-// Core variables and mixins
-@import "bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
-@import "bootstrap/mixins";
-
-// CSS Reset
-@import "bootstrap/reset";
-
-// Grid system and page structure
-@import "bootstrap/scaffolding";
-@import "bootstrap/grid";
-@import "bootstrap/layouts";
-
-// Base CSS
-@import "bootstrap/type";
-@import "bootstrap/code";
-@import "bootstrap/forms";
-@import "bootstrap/tables";
-
-// Components: common
-// @import "bootstrap/sprites";
-@import "bootstrap/dropdowns";
-@import "bootstrap/wells";
-@import "bootstrap/component-animations";
-@import "bootstrap/close";
-
-// Components: Buttons & Alerts
-@import "bootstrap/buttons";
-@import "bootstrap/button-groups";
-@import "bootstrap/alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons
-
-// Components: Nav
-@import "bootstrap/navs";
-@import "bootstrap/navbar";
-@import "bootstrap/breadcrumbs";
-@import "bootstrap/pagination";
-@import "bootstrap/pager";
-
-// Components: Popovers
-@import "bootstrap/modals";
-@import "bootstrap/tooltip";
-@import "bootstrap/popovers";
-
-// Components: Misc
-@import "bootstrap/thumbnails";
-/* @import "bootstrap/media"; */
-@import "bootstrap/labels-badges";
-@import "bootstrap/progress-bars";
-@import "bootstrap/accordion";
-@import "bootstrap/carousel";
-@import "bootstrap/hero-unit";
-
-// Utility classes
-@import "bootstrap/utilities"; // Has to be last to override when necessary
-
-body 
-{ 
-	padding: 0px;
-}
-
-.well
-{
-	background-color: $wellColor;
-	border:           0px;
-	padding:          0px;
-}
 
 .entry-controls
 {
 	display: inline-block;
 }
 
-.heading
-{
-	text-align: center;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
-	min-height: 40px;
-
-	h1,h2,h3,h4
-	{
-		margin: 0px;
-	}
-
-}
-
-.footer
-{
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  min-height: 20px;
-
-  h1,h2,h3,h4
-  {
-    margin: 0px;
-  }
-
-  a
-  {
-    margin-top: 6px;
-    margin-left: 6px;
-    margin-bottom: 6px;
-  }
-}
-
-.gradient-heading
-{
-   background-color: #1a82f7; 
-   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($navbarBackgroundHighlight), to($navbarBackground));
-   background-image: -webkit-linear-gradient(top, $navbarBackgroundHighlight, $navbarBackground); 
-   background-image: -moz-linear-gradient(top, $navbarBackgroundHighlight, $navbarBackground);
-   background-image: -ms-linear-gradient(top, $navbarBackgroundHighlight, $navbarBackground);
-   background-image: -o-linear-gradient(top, $navbarBackgroundHighlight, $navbarBackground);
-}
-
-
-.gradient-footer
-{
-   background-color: #1a82f7; 
-   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($navbarBackground), to($navbarBackgroundHighlight));
-   background-image: -webkit-linear-gradient(top, $navbarBackground, $navbarBackgroundHighlight); 
-   background-image: -moz-linear-gradient(top, $navbarBackground, $navbarBackgroundHighlight);
-   background-image: -ms-linear-gradient(top, $navbarBackground, $navbarBackgroundHighlight);
-   background-image: -o-linear-gradient(top, $navbarBackground, $navbarBackgroundHighlight);
-}
 
 .entry-name
 {
 	border-top-width: 1px;
 	border-top-style: solid;
-	border-top-color: $borderColor;
 
-}
-
-.side-content
-{
-	padding: 10px;
-	border-top-width: 1px;
-	border-top-style: solid;
-	border-top-color: $borderColor;
 }
 
 .entry
@@ -172,65 +28,4 @@ body
 	min-height: 200px;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
-	border-bottom-color: $borderColor;
 }
-
-.vert
-{
-	border-left: 1px solid;
-	border-color: $borderColor;
-	min-height:	 40px;
-
-}
-
-.navbar-inner
-{
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-#login-form
-{
-  display: inline-block;
-}
-
-
-.navbar .btn, .navbar .btn-group
-{
-  margin-top: 0px;
-}
-
-select, textarea, input[type="text"], 
-                  input[type="password"], 
-                  input[type="datetime"], 
-                  input[type="datetime-local"], 
-                  input[type="date"], 
-                  input[type="month"], 
-                  input[type="time"], 
-                  input[type="week"], 
-                  input[type="number"], 
-                  input[type="email"], 
-                  input[type="url"], 
-                  input[type="search"], 
-                  input[type="tel"], 
-                  input[type="color"],.uneditable-input 
-{
-  margin-bottom: 0px;
-}
-
-form 
-{
-    margin: 0 0 0px;
-}
-
-input, textarea, .uneditable-input 
-{
-    width: 120px;
-}
-
-label, .controls 
-{ 
-display: inline-block;
-}
-
-@import "bootstrap-responsive";

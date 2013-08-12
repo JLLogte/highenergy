@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require bootstrap
 //= require_tree ./plugins
 //= require initializer
 //= require turbolinks
+
+$(function(){ $(document).foundation(); });

@@ -9,5 +9,68 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ //= require foundation_and_overrides
  *= require_tree .
  */
+$sideNavBackground: #2E673D;
+$sideNavHeader:     #2D4E36;
+$sideNavBorder:     darken($sideNavHeader,5%);
+
+#left-pane
+{
+  position:   fixed;
+  width:      225px;
+  top:        0;
+  left:       0;
+  right:      0;
+  bottom:     0;
+  background: $sideNavBackground;
+
+  a
+  {
+    color: white;
+  }
+
+  i
+  {
+    padding-right: 3px;
+  }
+}
+
+#main-pane
+{
+  margin-left: 225px;
+}
+
+#logo
+{
+  height: 50px;
+  text-align: center;
+  text-shadow:         1px 1px #000;
+
+}
+
+.side-header
+{
+  padding:             5px;
+  background:          $sideNavHeader;
+  border-style:        solid;
+  border-top-width:    1px;
+  border-bottom-width: 0px;
+  border-left-width:   0px;
+  border-right-width:  0px;
+  border-color:        $sideNavBorder;
+  box-shadow:          0 1px 0 rgba(255,255,255, 0.05) inset;
+  text-shadow:         1px 1px #000;
+  color:               white;
+}
+
+
+#side-users
+{
+  border-style:        solid;
+  border-top-width:    0px;
+  border-bottom-width: 1px;
+  border-left-width:   0px;
+  border-right-width:  0px;
+}
