@@ -12,8 +12,8 @@
  //= require foundation_and_overrides
  *= require_tree .
  */
-$sideNavBackground: #2E673D;
-$sideNavHeader:     #2D4E36;
+$sideNavBackground: #165347;
+$sideNavHeader:     #01483A;
 $sideNavBorder:     darken($sideNavHeader,5%);
 
 #left-pane
@@ -73,4 +73,5 @@ $sideNavBorder:     darken($sideNavHeader,5%);
   border-bottom-width: 1px;
   border-left-width:   0px;
   border-right-width:  0px;
+  border-color:        $sideNavBorder;
 }
