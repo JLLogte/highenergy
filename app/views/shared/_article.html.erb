@@ -1,25 +1,19 @@
 <div class="entry row">
 
-  <div class="entry-name row">
-    <div id="article-topic" class="flair-left">
-      <%= article.topic.name %>
-    </div>
-    <div id="article-name" class="">
+  <div class="entry-name">
+    <div class="article-name" class="">
       <h3><%= article.name %></h3>
     </div>
-    <div id="article-source-icon" class="flair-right">
-      Icon
-    </div>
   </div>
-  <div class="entry-content row">
-    <div id="article-image" class="img-rounded">
+  <div class="entry-content">
+    <div class="article-image small-4 columns">
       <% if article.image.url != "/images/original/missing.png" %>
-        <%= image_tag article.image.url %>
+        <%= image_tag article.image.url(:medium) %>
       <% else %>
-        <%= image_tag article.topic.image.url %>
+        <%= image_tag article.topic.image.url(:medium) %>
       <% end %>
     </div>
-    <div id="article-content" class="">
+    <div class="article-content small-8 columns">
       <%= article.content %>
     </div>
   </div>

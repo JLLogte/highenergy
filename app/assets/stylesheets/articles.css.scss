@@ -2,20 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#article-topic, #article-name, #article-source-icon
+.article-topic, .article-name, .article-source-icon
 {
-  margin-left:0px;
-  margin-top:5px;
+  margin-left:  0px;
+  margin-top:   5px;
   padding-left: 5px;
-  padding-top: 5px;
-  text-align: center;
+  padding-top:  5px;
+  text-align:   center;
 }
 
-#article-topic
+.article-topic
 {
 }
 
-#article-name
+.article-name
 {
   h1,h2,h3
   {
@@ -23,39 +23,16 @@
   }
 }
 
-#article-image, #article-content
+.article-image, .article-content
 {
-
+  img
+  {
+    height: 100px;
+  }
 }
 
-#article-source-icon
+.article-content
 {
-  float: right;
-}
-
-#article-content
-{
-  margin-left: 0px;
+  margin-left:  0px;
   padding-left: 10px;
-}
-
-.flair-right
-{
-  border-bottom-left-radius:  4px;
-  border-top-left-radius:     4px;
-  background-color: #33CCFF;
-  color: #fff;
-  box-shadow: -1px 0px 2px 2px #094165;
-
-  background: #469717; /* Old browsers */
-}
-
-.flair-left
-{
-  border-bottom-right-radius:  4px;
-  border-top-right-radius:     4px;
-  color: #fff;
-  box-shadow: 1px 0px 2px 2px #094165;
-
-  background: #469717; /* Old browsers */
 }
