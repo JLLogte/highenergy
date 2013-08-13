@@ -2,37 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.article-topic, .article-name, .article-source-icon
+//Override margin for nested row classes
+.row .row
 {
-  margin-left:  0px;
-  margin-top:   5px;
-  padding-left: 5px;
-  padding-top:  5px;
-  text-align:   center;
-}
-
-.article-topic
-{
-}
-
-.article-name
-{
-  h1,h2,h3
-  {
-    line-height: 10px;
-  }
-}
-
-.article-image, .article-content
-{
-  img
-  {
-    height: 100px;
-  }
+  margin: 0;
 }
 
 .article-content
 {
-  margin-left:  0px;
-  padding-left: 10px;
+  .small-2
+  {
+    img
+    {
+      position: relative;
+      z-index: -1;
+    }
+  }
 }
