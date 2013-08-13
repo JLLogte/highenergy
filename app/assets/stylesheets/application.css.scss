@@ -44,10 +44,18 @@ $sideNavBorder:     darken($sideNavHeader,5%);
 
 #logo
 {
-  height: 50px;
-  text-align: center;
-  text-shadow:         1px 1px #000;
+  height:             50px;
+  text-align:         center;
+  text-shadow:        1px 1px #000;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: $sideNavBorder;
+}
 
+#side-login
+{
+  bottom: 0;
+  position: absolute;
 }
 
 .side-header

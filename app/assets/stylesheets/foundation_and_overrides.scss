@@ -165,8 +165,8 @@ $body-bg: lighten(#90D8CA,3%);
 // $header-font-style: normal;
 // $header-font-color: #222;
 // $header-line-height: 1.4;
-// $header-top-margin: .2em;
-// $header-bottom-margin: .5em;
+ $header-top-margin: 0;
+ $header-bottom-margin: 0;
 // $header-text-rendering: optimizeLegibility;
 
 // Control header font sizes

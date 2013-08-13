@@ -1,17 +1,19 @@
 
-<div class="heading">
-  <h1>News Feed</h1>
+<div class="controller-heading">
+  <h3>News Feed</h3>
 </div>
 
-<%= render partial: "shared/article", collection: @articles %>
+<div class="controller-content">
+  <%= render partial: "shared/article", collection: @articles %>
 
-<% content_for :side_bar do %>
-  <div class="heading gradient-heading">
-    <h4> User Information </h4>
-  </div>
-  <% if user_signed_in? %>
-		<%= current_user.email %><br>
-	<% else %>
-		<strong> Sign In to enhance your experince </strong>
-	<% end %>
-<% end %>
+  <% content_for :side_bar do %>
+    <div class="heading gradient-heading">
+      <h4> User Information </h4>
+    </div>
+    <% if user_signed_in? %>
+  		<%= current_user.email %><br>
+  	<% else %>
+  		<strong> Sign In to enhance your experince </strong>
+  	<% end %>
+  <% end %>
+</div>
