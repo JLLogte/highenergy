@@ -11,7 +11,7 @@ r = Role.create(name: "admin")
 
 r = Role.create(name: "user")
 
-u = User.create({ :email => 'ruminatious@gmail.com', 
+u = User.create({ :email => ''', 
 				  :password => 'password', 
 				  :password_confirmation => 'password'})
 
